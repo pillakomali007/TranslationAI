@@ -34,7 +34,7 @@
 
         <div class="header">
 
-            <h1>Translate Anything</h1>
+           
 
             <p>
                 Fast • Smart • Multilingual
@@ -94,13 +94,17 @@
 
 </select>
 
-            <button onclick="startVoiceInput()">
-                🎤
-            </button>
+            
+<button id="themeBtn"
+        onclick="toggleTheme()">
+    🌙 Dark Mode
+</button>
+            <button id="speakerBtn"
+        onclick="toggleSpeech()">
+        🔊 ON
+</button>
 
-            <button onclick="toggleDarkMode()">
-                🌙
-            </button>
+          
 
         </div>
 
@@ -109,6 +113,8 @@
             <textarea
             id="inputText"
             placeholder="Type your text here..."></textarea>
+
+            <button onclick="startVoiceInput()">🎤 Speak</button>
 
             <button
             class="translate-btn"
@@ -123,7 +129,6 @@
     </main>
 
 </div>
-
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
