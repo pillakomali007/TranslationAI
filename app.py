@@ -34,18 +34,17 @@ def translate():
         sentiment = "Negative 😔"
     else:
         sentiment = "Neutral 😐"
+        
+history.append({
+    "original": text,
+    "translated": translated
+})
 
-    history.append({
-        "original": text,
-        "translated": translated
-    })
-
-    return jsonify({
-        "translated": translated,
-        "detected": detected_lang,
-        "sentiment": sentiment,
-        "history": history[-10:]
-    })
-
+return jsonify({
+    "translated": translated,
+    "detected": detected_lang,
+    "sentiment": sentiment,
+    "history": history[-10:]
+})
 if __name__ == "__main__":
     app.run(debug=True)
